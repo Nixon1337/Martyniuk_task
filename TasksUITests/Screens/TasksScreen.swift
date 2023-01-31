@@ -1,31 +1,31 @@
 import Foundation
 import XCTest
 
-class TasksScreen: BaseScreen {
+class TasksScreen: BaseTestCase {
     
-    private lazy var moreInfoSleepButton = app.windows.tables.cells.buttons["More Info"]
+    private lazy var moreInfoSleepButton = app.windows.otherElements.tables.cells.buttons["More Info"].firstMatch
     
     func tapOnMoreInfoSleepButton() {
         moreInfoSleepButton.tap()
-        CompositeElements().assertToolbarTitle(title: SLEEP_TITLE)
+        compositeElements.assertToolbarTitle(title: sleepTitle)
     }
     
     func checkNoTasksAreDoneInTasks() {
         for i in 0...4 {
-            CompositeElements().assertCellIsSelected(pos: i, title: tasksArray[i], state: NOT_SELECTED)
+            compositeElements.assertCellIsSelected(pos: i, title: tasksArray[i], state: notSelectedState)
         }
     }
     
     func checkAllTasksAreDoneInTasks() {
         for i in 0...4 {
-            CompositeElements().assertCellIsSelected(pos: i, title: tasksArray[i], state: SELECTED)
+            compositeElements.assertCellIsSelected(pos: i, title: tasksArray[i], state: selectedState)
         }
     }
     
     func assertTasksScreen() {
-        XCTAssert(moreInfoSleepButton.waitForExistence(timeout: 20))
-        CompositeElements().assertToolbarTitle(title: TASKS_TITLE)
-        XCTAssert(CompositeElements().logoutButton.isEnabled)
-        XCTAssert(CompositeElements().sortByNameButton.isEnabled)
+        XCTAssertTrue(moreInfoSleepButton.waitForExistence(timeout: 20), "\(moreInfoSleepButton) is visible on tasks screen")
+        compositeElements.assertToolbarTitle(title: tasksTitle)
+        XCTAssertTrue(compositeElements.logoutButton.isEnabled, "\(compositeElements.logoutButton) is visible on tasks screen")
+        XCTAssertTrue(compositeElements.sortByNameButton.isEnabled, "\(compositeElements.sortByNameButton) is visible on tasks screen")
     }
 }

@@ -15,7 +15,15 @@ What parts of app will be tested:
  - Check logout flow from Tasks and Sleep screens
  - Check if checkbox cindition is saved or not saved with different methods
  - Check "Complete all" and "Sort by name" filters in Tasks and Sleep screens
-
+ - create list of test cases
+ - create Smoke test case: 
+ 1. Log in with valid credentials
+ 2. Check several tasks states
+ 3. Sort tasks by name
+ 4. Tap on 'More info' button
+ 5. Tap on Complete all button
+ 6. Tap back button
+ 7. Confirm log out
 
 # LIST OF TEST CASES: 
 Login Tests:
@@ -45,11 +53,11 @@ Data Condition Tests:
 
 
 # LIST OF DISCOVERED ISSUES:
- - Re-login does not save the set condition of the tasks with same account.
- - After kill app, the set condition of the tasks is not saved.
- - "Sort by name" does not work correctly (sometimes it can set the tasks as "Done").
- - "Complete all", "Cancel all" do not work correctly (sometimes the color of text of tasks is getting as in "Done" state, but checkboxes are empty; sometimes the button is not changed into another).
- - Single set task as "Done" does not work correctly (sometimes it marks another task, not the tasked i chose, as "Done").
- - Retry pop-up error during login via valid credentials. No logical reproductions were found, everything is random.
- - There is no safe range for entering characters into "Email" and "Password" fields. Current minimum - 1 character, maximum - unlimited. For example, valid range in Gmail is 6 - 30 characters for email field and 8 - 100 for password field. In Yahoo, valid range is 4 - 32 characters for email field and 9 - 128 for password field.
- - Improvement, not a bug. Structure the pop-up window in the app. Make one form, text size, same font, buttons. In the login form screen two pop-ups look like system ones and differ from the Logout pop-up.
+ 1. Re-login does not save the set condition of the tasks with same account.
+ 2. After kill app, the set condition of the tasks is not saved.
+ 3. "Sort by name" does not work correctly (sometimes it can set the tasks as "Done").
+ 4. "Complete all", "Cancel all" do not work correctly (sometimes the color of text of tasks is getting as in "Done" state, but checkboxes are empty; sometimes the button is not changed into another).
+ 5. Single set task as "Done" does not work correctly (sometimes it marks another task, not the tasked i chose, as "Done").
+ 6. Retry pop-up error during login via valid credentials. No logical reproductions were found, everything is random.
+ 7. There is no safe range for entering characters into "Email" and "Password" fields. Current minimum - 1 character, maximum - unlimited. For example, valid range in Gmail is 6 - 30 characters for email field and 8 - 100 for password field. In Yahoo, valid range is 4 - 32 characters for email field and 9 - 128 for password field.
+ 8. Improvement, not a bug. Structure the pop-up window in the app. Make one form, text size, same font, buttons. In the login form screen two pop-ups look like system ones and differ from the Logout pop-up.

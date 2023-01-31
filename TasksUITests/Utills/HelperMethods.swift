@@ -1,9 +1,8 @@
 import Foundation
 import XCTest
 
-class HelperMethods: BaseScreen {
+class HelperMethods: BaseTestCase {
     
-    private lazy var appIcon = app.icons["Tasks"]
     private lazy var closeKeyboardButton = app.keyboards.buttons["return"].firstMatch
     
     func tapCloseKeyboardButton() {

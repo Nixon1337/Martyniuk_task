@@ -1,9 +1,9 @@
 import Foundation
 
-let SLEEP_TITLE = "Sleep"
-let FIND_BED = "Find a bed"
-let LIE_DOWN = "Lie down"
-let CLOSE_EYES = "Close eyes"
-let WAIT = "Wait"
+let sleepTitle = "Sleep"
+let findBedTask = "Find a bed"
+let lieDownTask = "Lie down"
+let closeEyesTask = "Close eyes"
+let waitTask = "Wait"
 
-public var sleepArray = [FIND_BED, LIE_DOWN, CLOSE_EYES, WAIT]
+public var sleepArray = [findBedTask, lieDownTask, closeEyesTask, waitTask]

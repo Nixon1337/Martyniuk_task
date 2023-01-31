@@ -1,10 +1,10 @@
 import Foundation
 
-let TASKS_TITLE = "Tasks"
-let BUY_MILK = "Buy milk"
-let PAY_RENT = "Pay rent"
-let CHANGE_TIRES = "Change tires"
-let SLEEP = "Sleep"
-let DANCE = "Dance"
+let tasksTitle = "Tasks"
+let buyMilkTask = "Buy milk"
+let payRentTask = "Pay rent"
+let changeTiresTask = "Change tires"
+let sleepTask = "Sleep"
+let danceTask = "Dance"
 
-public var tasksArray = [BUY_MILK, PAY_RENT, CHANGE_TIRES, SLEEP, DANCE]
+public var tasksArray = [buyMilkTask, payRentTask, changeTiresTask, sleepTitle, danceTask]

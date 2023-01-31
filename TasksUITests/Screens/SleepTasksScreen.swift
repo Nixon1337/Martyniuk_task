@@ -1,31 +1,31 @@
 import Foundation
 import XCTest
 
-class SleepTasksScreen: BaseScreen {
+class SleepTasksScreen: BaseTestCase {
     
-    lazy var backButton = app.windows.navigationBars.buttons[TASKS_TITLE]
+    lazy var backButton = app.windows.otherElements.navigationBars.buttons[tasksTitle].firstMatch
 
     func tapOnBackButton() {
         backButton.tap()
-        CompositeElements().assertToolbarTitle(title: TASKS_TITLE)
+        compositeElements.assertToolbarTitle(title: tasksTitle)
     }
     
     func checkNoTasksAreDoneInSleep() {
         for i in 0...3 {
-            CompositeElements().assertCellIsSelected(pos: i, title: sleepArray[i], state: NOT_SELECTED)
+            compositeElements.assertCellIsSelected(pos: i, title: sleepArray[i], state: notSelectedState)
         }
     }
     
     func checkAllTasksAreDoneInSleep() {
         for i in 0...3 {
-            CompositeElements().assertCellIsSelected(pos: i, title: sleepArray[i], state: SELECTED)
+            compositeElements.assertCellIsSelected(pos: i, title: sleepArray[i], state: selectedState)
         }
     }
     
     func assertSleepTasksScreen() {
-        XCTAssert(backButton.waitForExistence(timeout: 3))
-        CompositeElements().assertToolbarTitle(title: SLEEP_TITLE)
-        XCTAssert(CompositeElements().logoutButton.isEnabled)
-        XCTAssert(CompositeElements().sortByNameButton.isEnabled)
+        XCTAssertTrue(backButton.waitForExistence(timeout: 3), "\(backButton) is visible on sleep tasks screen")
+        compositeElements.assertToolbarTitle(title: sleepTitle)
+        XCTAssertTrue(compositeElements.logoutButton.isEnabled , "\(compositeElements.logoutButton) is visible on sleep tasks screen")
+        XCTAssertTrue(compositeElements.sortByNameButton.isEnabled, "\(compositeElements.sortByNameButton) is visible on sleep tasks screen")
     }
 }

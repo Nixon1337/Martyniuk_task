@@ -1,4 +1,4 @@
 import Foundation
 
-let SELECTED = "Selected"
-let NOT_SELECTED = "Not selected"
+let selectedState = "Selected"
+let notSelectedState = "Not selected"

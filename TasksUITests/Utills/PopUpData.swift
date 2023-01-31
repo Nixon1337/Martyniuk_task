@@ -1,9 +1,9 @@
 import Foundation
 
-let ERROR_TITLE = "Error"
-let LOGOUT_TITLE = "Do you really want to logout?"
+let errorTitle = "Error"
+let logoutTitle = "Do you really want to logout?"
 
-let LOGOUT = "Logout"
-let CANCEL = "Cancel"
-let OK = "Ok"
-let RETRY = "Retry"
+let logout = "Logout"
+let cancel = "Cancel"
+let ok = "Ok"
+let retry = "Retry"
